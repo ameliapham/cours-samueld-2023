@@ -14,3 +14,5 @@ Simplement ouvrir le fichier `/index.html` il n'y a pas besoin de démarer WAMP 
 Le fichier `/inventory.php` est mis dans ce dossier seulement a titre indicatif,
 il a été placé sur mon serveur worpress https://design.ameliart.fr.  
 Voir ligne 13 de `/index.html`.  
+
+Le site est aussi disponible directement ici: https://ameliapham.github.io/cours-samueld-2023/
