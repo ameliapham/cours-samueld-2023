@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Page Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script>
+
+		function changeInventory(type) {
+
+			$("ul").html("");
+
+			$.ajax(`https://design.ameliart.fr/inventory.php?type=${type}`)
+				.done(result => {
+
+					const inventory = JSON.parse(result);
+
+					for (const item of inventory) {
+						$("ul").append(`<li>${item.name}: ${item.price}€</li>`);
+					}
+
+				});
+
+		}
+
+		$(document).ready(() => {
+
+			$("#btn-meubles").click(() => {
+				changeInventory("meubles");
+			});
+
+			$("#btn-informatique").click(() => {
+				changeInventory("informatique");
+			});
+
+			$("#btn-decoration").click(() => {
+				changeInventory("decoration");
+			});
+
+		});
+
+
+
+	</script>
+	</head>
+	
+	<body>
+
+		<h1>Bienvenu sur la boutique en ligne d'Amelia</h1>
+	
+		<button id="btn-meubles">Rubrique ammeublement</button>
+		<button id="btn-informatique">Rubrique informatique</button>
+		<button id="btn-decoration">Rubrique décoration</button>
+	
+		<ul>
+			<li>Cliquer sur un des bouttons pour afficher le catalogue</li>
+		</ul>
+	
+	</body>
+	
+	</html>
